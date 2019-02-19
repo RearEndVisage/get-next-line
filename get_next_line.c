@@ -6,7 +6,7 @@
 /*   By: cmckelvy <cmckelvy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/18 12:53:59 by cmckelvy          #+#    #+#             */
-/*   Updated: 2019/02/19 14:43:20 by cmckelvy         ###   ########.fr       */
+/*   Updated: 2019/02/19 14:49:55 by cmckelvy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,12 +77,12 @@ int					get_next_line(const int fd, char **line)
 		BREAK_CHECK(ft_strchr(ptr->content, '\n'));
 	}
 	if (!readboi && !ft_strlen(ptr->content))
-		{
-			ft_strclr(*line);
-			return (0);
-		}
-		ERROR_CHECK(!(*line = ft_strnew(ft_strlen(ptr->content))));
-		*line = ft_strccpy(*line, ptr->content, '\n');
+	{
+	ft_strclr(*l	ine);
+		return (0);
+	}
+	ERROR_CHECK(!(*line = ft_strnew(ft_strlen(ptr->content))));
+	*line = ft_strccpy(*line, ptr->content, '\n');
 	clean(ptr);
 	return (1);
 }
