@@ -6,7 +6,7 @@
 /*   By: cmckelvy <cmckelvy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/28 18:16:15 by cmckelvy          #+#    #+#             */
-/*   Updated: 2019/02/16 21:45:22 by cmckelvy         ###   ########.fr       */
+/*   Updated: 2019/02/19 14:39:43 by cmckelvy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ int		ft_strncmp(const char *s1, const char *s2, size_t n)
 {
 	size_t i;
 
+	i = 0;
 	if (!s1 || !s2 || !n)
 		return (0);
 	while (s1[i] && s2[i] && i < n - 1)
