@@ -6,7 +6,7 @@
 /*   By: cmckelvy <cmckelvy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/18 12:53:59 by cmckelvy          #+#    #+#             */
-/*   Updated: 2019/02/18 18:59:11 by cmckelvy         ###   ########.fr       */
+/*   Updated: 2019/02/19 14:43:20 by cmckelvy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ static char			*ft_strccpy(char *dst, char *src, char c)
 	return (dst);
 }
 
-static 		t_list	*get_file(const int fd, t_list **file)
+static t_list		*get_file(const int fd, t_list **file)
 {
 	t_list	*tmp;
 
@@ -44,7 +44,7 @@ static 		t_list	*get_file(const int fd, t_list **file)
 	return (tmp);
 }
 
-static void	clean(t_list *ptr)
+static void			clean(t_list *ptr)
 {
 	char *tmp;
 
@@ -58,7 +58,7 @@ static void	clean(t_list *ptr)
 		ft_strclr(ptr->content);
 }
 
-int			get_next_line(const int fd, char **line)
+int					get_next_line(const int fd, char **line)
 {
 	char			buf[BUFF_SIZE + 1];
 	char			*tmp;
@@ -68,7 +68,6 @@ int			get_next_line(const int fd, char **line)
 
 	ERROR_CHECK(fd < 0 || line == NULL || read(fd, buf, 0) < 0);
 	ptr = get_file(fd, &file);
-
 	while ((readboi = read(fd, buf, BUFF_SIZE)))
 	{
 		buf[readboi] = '\0';
