@@ -1,10 +1,8 @@
 #!/bin/bash
 
-# This script opens 4 terminal windows.
+i="0"
 
-i="1039"
-
-while [ $i -lt 5000 ]
+while [ $i -lt 4999 ]
 do
 echo "hello" >> "test$i" &
 i=$[$i+1]

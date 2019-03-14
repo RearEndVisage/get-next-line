@@ -20,7 +20,7 @@ $(NAME):
 
 .PHONY: clean
 clean:
-	@echo "\033[33mcleaning...\033[0m"
+	@echo  "\033[33mcleaning...\033[0m"
 	@/bin/rm -f $(NAME)
 	@make -C libft fclean
 
