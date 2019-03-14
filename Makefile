@@ -12,12 +12,11 @@ CFLAGS = -Wall -Wextra -Werror
 all: $(NAME)
 
 $(NAME):
-	@echo "\033[32mmaking libft...\033[0m"
 	@make -C libft fclean
 	@make -C libft
 	@make -C libft clean
 	@echo "\033[32mmaking get_next_line...\033[0m"
-	@$(CC) $(CFLAGS) $(SRC) -I libft -L libft -lft -o $(NAME)
+	@$(CC) $(CFLAGS) -o $(NAME) $(SRC) -I libft/includes -L libft -lft
 
 .PHONY: clean
 clean:

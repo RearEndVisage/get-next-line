@@ -6,7 +6,7 @@
 /*   By: cmckelvy <cmckelvy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/01 13:04:54 by cmckelvy          #+#    #+#             */
-/*   Updated: 2019/02/19 16:02:46 by cmckelvy         ###   ########.fr       */
+/*   Updated: 2019/03/13 22:57:36 by cmckelvy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,13 @@ typedef struct	s_list
 	size_t			content_size;
 	struct s_list	*next;
 }				t_list;
+
+t_list			*ft_lstnew(void const *content, size_t content_size);
+void			ft_lstadd(t_list **alst, t_list *new);
+void			ft_lstdel(t_list **alst, void (*del)(void *, size_t));
+void			ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
+void			ft_lstiter(t_list *lst, void (*f)(t_list *elem));
+t_list			*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 
 int				ft_atoi(const char *str);
 void			ft_bzero(void *s, size_t size);
@@ -89,5 +96,7 @@ int				ft_wordlen(char const *s, char const c);
 int				ft_wordcount(char const *s, char const c);
 int				ft_digits(int n);
 void			ft_lstsort(t_list **begin_list, int (*cmp)());
+int				ft_digits_base(int n, int base);
+char			*ft_itoa_base(int n, int base);
 
 #endif

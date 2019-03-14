@@ -1,29 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   ft_lstadd.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cmckelvy <cmckelvy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/02/18 12:56:29 by cmckelvy          #+#    #+#             */
-/*   Updated: 2019/03/13 22:58:00 by cmckelvy         ###   ########.fr       */
+/*   Created: 2019/02/16 18:51:10 by cmckelvy          #+#    #+#             */
+/*   Updated: 2019/03/04 15:34:39 by cmckelvy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
-# define BUFF_SIZE 1
-# define ERROR_CHECK(x) if (x) return (-1)
-# define BREAK_CHECK(x) if (x) break
+#include "libft.h"
 
-# include "libft.h"
-# include <unistd.h>
-# include <stdio.h>
-# include <sys/types.h>
-# include <sys/stat.h>
-# include <fcntl.h>
-# include <stdlib.h>
-
-int		get_next_line(const int fd, char **line);
-
-#endif
+void	ft_lstadd(t_list **alst, t_list *new)
+{
+	new->next = (*alst);
+	(*alst) = new;
+}
