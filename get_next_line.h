@@ -12,7 +12,7 @@
 
 #ifndef GET_NEXT_LINE_H
 # define GET_NEXT_LINE_H
-# define BUFF_SIZE 1
+# define BUFF_SIZE 68
 # define ERROR_CHECK(x) if (x) return (-1)
 # define BREAK_CHECK(x) if (x) break
 

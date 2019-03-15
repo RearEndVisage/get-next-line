@@ -6,7 +6,7 @@
 /*   By: cmckelvy <cmckelvy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/06 05:26:42 by jrameau           #+#    #+#             */
-/*   Updated: 2019/03/13 21:55:41 by cmckelvy         ###   ########.fr       */
+/*   Updated: 2019/03/14 17:38:23 by cmckelvy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ int		main(int argc, char **argv)
 	int		fd;
 	char	*line;
 	int		i;
+	char	test[8];
 
 	if (argc == 1)
 	{
@@ -26,6 +27,20 @@ int		main(int argc, char **argv)
 		{
 			ft_putendl(line);
 			free(line);
+		}
+	}
+	else if (argc == 2 && !ft_strcmp(argv[1], "test*"))
+	{
+		ft_strcpy(test, "test");
+		i = -1;
+		while (++i < 5000)
+		{
+			fd = open(ft_strcat(test, ft_itoa(i)), O_RDONLY);
+			while (get_next_line(fd, &line) == 1)
+			{
+				ft_putendl(line);
+				free(line);
+			}
 		}
 	}
 	else if (argc < 1)

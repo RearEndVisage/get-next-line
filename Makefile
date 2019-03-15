@@ -16,7 +16,7 @@ $(NAME):
 	@make -C libft
 	@make -C libft clean
 	@echo "\033[32mmaking get_next_line...\033[0m"
-	@$(CC) $(CFLAGS) -o $(NAME) $(SRC) -I libft/includes -L libft -lft
+	@$(CC) $(CFLAGS) -o $(NAME) $(SRC) -g -I libft/includes -L libft -lft
 
 .PHONY: clean
 clean:

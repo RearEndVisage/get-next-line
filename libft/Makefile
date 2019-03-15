@@ -94,7 +94,7 @@ clean:
 
 .PHONY: fclean
 fclean: clean
-	@echo "\033[31mremoving libft library file...\033[0m"
+	@echo "\033[31m removing libft library file...\033[0m"
 	@rm -f $(NAME)
 
 .PHONY: re
