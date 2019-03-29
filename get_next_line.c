@@ -6,14 +6,14 @@
 /*   By: cmckelvy <cmckelvy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/18 12:53:59 by cmckelvy          #+#    #+#             */
-/*   Updated: 2019/02/19 14:52:11 by cmckelvy         ###   ########.fr       */
+/*   Updated: 2019/03/28 19:00:37 by cmckelvy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 #include "libft.h"
 
-static char			*ft_strccpy(char *dst, char *src, char c)
+static void			ft_strccpy(char *dst, char *src, char c)
 {
 	int i;
 
@@ -24,7 +24,6 @@ static char			*ft_strccpy(char *dst, char *src, char c)
 		i++;
 	}
 	dst[i] = '\0';
-	return (dst);
 }
 
 static t_list		*get_file(const int fd, t_list **file)
@@ -82,7 +81,7 @@ int					get_next_line(const int fd, char **line)
 		return (0);
 	}
 	ERROR_CHECK(!(*line = ft_strnew(ft_strlen(ptr->content))));
-	*line = ft_strccpy(*line, ptr->content, '\n');
+	ft_strccpy(*line, ptr->content, '\n');
 	clean(ptr);
 	return (1);
 }
